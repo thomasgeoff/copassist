@@ -168,15 +168,15 @@ router.get('/seed/:temp/:hum/:bright', (req, res) =>{
 });
 router.get('/seedStats', (req,res) => {
 	var seed = {
-		avgTemperature: 32,
-		avgHumidity: 11,
-		avgBrightness: 721,
-		timeInHot: 20,
-		timeInCold: 60,
-		timeInDry: 80,
-		timeInHumid: 8,
-		timeOn: 59,
-		timeTotal: 100
+		avgTemperature: 1,
+		avgHumidity: 1,
+		avgBrightness: 1,
+		timeInHot: 1,
+		timeInCold: 1,
+		timeInDry: 1,
+		timeInHumid: 1,
+		timeOn: 1,
+		timeTotal: 1
 	}
 
 	db.Stats.findOneAndUpdate({}, seed, {'new': true, upsert: true})
