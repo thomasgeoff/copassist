@@ -151,7 +151,7 @@ router.get('/seed/:temp/:hum/:bright', (req, res) =>{
 	console.log("1:",req.params.temp);
 	//console.log("2",seed[temperature]);
 
-	if (req.params.temp >30){
+	if (req.params.hum >50){
 		sendsms();
  		console.log("Backup message send");
 	}else if(req.params.bright == 1){
