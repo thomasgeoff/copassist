@@ -7,7 +7,7 @@ var msgtype = '';
 function sendsms(msgtype = 'backup'){
 // Twilio Credentials
 var accountSid = 'ACc76cda42a62d0699bcc96d0613d3b7d9';
-var authToken = '925064d7b8cdd88c88d4619098258a82';
+var authToken = '35fc6a052d0566aa67388caf9dc0f18c';
 // require the Twilio module and create a REST client
 var client = new twilio(accountSid, authToken);
 
@@ -18,8 +18,8 @@ if (msgtype != 'backup'){
 }
 
 client.messages.create({
-    to: '+19169533391',
-    from: '+16476991695',
+    to: '+16692927882',
+    from: '+15855916460',
     body: msg,
     mediaUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3aBiy9_M3I1iFmCSHygxFcCmRlZtYhJce0GGd53SgUCsbkovs'
 })
@@ -151,7 +151,7 @@ router.get('/seed/:temp/:hum/:bright', (req, res) =>{
 	console.log("1:",req.params.temp);
 	//console.log("2",seed[temperature]);
 
-	if (req.params.hum >50){
+	if (req.params.hum === 0){
 		sendsms();
  		console.log("Backup message send");
 	}else if(req.params.bright == 1){
